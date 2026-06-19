@@ -13,9 +13,11 @@
   - [ ] Implement Domain Parser & Subdomain Neutralizer
   - [ ] Implement Lexical Ticker-Stuffing Heuristic
   - [ ] Implement `POST /v1/triage` endpoint
-- [ ] **Phase 4: Mock Dataset & In-Memory Loading**
-  - [ ] Add seed list of known financial content farms
-  - [ ] Add startup loader for in-memory lookup
+- [ ] **Phase 4: Supabase Database Integration & Loading**
+  - [ ] Set up Supabase schema & client configuration
+  - [ ] Implement startup database sync to in-memory set (Read-Local)
+  - [ ] Implement background thread scheduler for periodic threat updates
+  - [ ] Implement async queue & batch writer to push client usage log metrics
 - [ ] **Phase 5: Verification & Testing**
   - [ ] Implement unit tests for domain/lexical matching rules
   - [ ] Implement latency benchmark tests (<15ms target)

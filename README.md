@@ -1,4 +1,4 @@
-# FinSpam Shield
+# Heimdall
 
 An ultra-fast, pre-ingestion data-hygiene API designed to drop automated spam domains and programmatic content farms before they touch your Retrieval-Augmented Generation (RAG) vector embeddings.
 
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 ### 2. Configure Settings
 Copy `.env.example` to `.env` and set your static API key:
 ```bash
-FINSPAM_API_KEY=your_secure_api_key
+HEIMDALL_API_KEY=your_secure_api_key
 ```
 
 ### 3. Start the API Server
@@ -65,4 +65,3 @@ For deeper dives, see the docs:
 * Roadmap and milestones: [docs/phases.md](file:///Users/danwooster/1. DEV/RAG-watcher/docs/phases.md)
 * AI Developer guidelines: [docs/prompt.md](file:///Users/danwooster/1. DEV/RAG-watcher/docs/prompt.md)
 * Testing instructions: [docs/testing.md](file:///Users/danwooster/1. DEV/RAG-watcher/docs/testing.md)
-# RAGRAG

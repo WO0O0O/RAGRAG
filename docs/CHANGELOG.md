@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the FinSpam Shield project will be documented in this file.
+All notable changes to the Heimdall project will be documented in this file.
 
 ## [0.1.0] - 2026-06-19
 ### Added

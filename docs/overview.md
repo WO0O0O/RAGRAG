@@ -1,7 +1,7 @@
-# FinSpam Shield - Overview & Requirements
+# Heimdall - Overview & Requirements
 
 ## Core Value Proposition
-FinSpam Shield is a stateless, high-performance inline firewall for quantitative hedge funds, private equity firms, and market intelligence startups running Retrieval-Augmented Generation (RAG) pipelines. It drops programmatic SEO content farms and keyword-stuffed news URLs before they touch vector embeddings, preventing sentiment skew and compliance issues.
+Heimdall is a high-performance inline firewall for quantitative hedge funds, private equity firms, and market intelligence startups running Retrieval-Augmented Generation (RAG) pipelines. It drops programmatic SEO content farms and keyword-stuffed news URLs before they touch vector embeddings, preventing sentiment skew and compliance issues.
 
 ## MVP Specifications (1-Week Scope)
 * **API Endpoint**: `POST /v1/triage`
@@ -9,6 +9,13 @@ FinSpam Shield is a stateless, high-performance inline firewall for quantitative
   * Returns: List of objects containing URL and binary verdict (`allow: true` or `allow: false`).
 * **SLA**: Under 15ms response time per URL.
 * **Authentication**: Strict validation via a static `X-API-Key` passed in the request header.
+
+## Tech Stack & Infrastructure
+* **Database**: **Supabase (PostgreSQL)**. Used to store seed blacklists, custom whitelists, client API keys, and aggregated usage logs.
+* **Hosting**: **Render or Railway** (persistent Uvicorn process). Avoids serverless cold starts and keeps the in-memory cache warm.
+* **Hybrid State Model (Read-Local, Write-Async)**:
+  * *Reads*: Heimdall reads from an in-memory compiled hash set. A background thread pulls fresh threat intelligence from Supabase every 5-10 minutes.
+  * *Writes*: Usage metrics are logged to an in-memory queue and batched to Supabase asynchronously to avoid blocking the critical path.
 
 ## Out of Scope
 * **NO HTTP Request Execution**: Do not crawl, scrape, or fetch the HTML content of the target sites.
