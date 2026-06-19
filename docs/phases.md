@@ -1,0 +1,21 @@
+# Development Phases & Roadmap
+
+- [ ] **Phase 1: Planning and Setup**
+  - [x] Write repository documentation in `docs/` (`prompt.md`, `overview.md`, `phases.md`, `testing.md`, `CHANGELOG.md`)
+  - [ ] Define project structure and file layouts
+  - [ ] Draft dependency specification (`pyproject.toml`)
+  - [ ] Define configuration settings and environment variables
+- [ ] **Phase 2: Scaffold / Skeleton**
+  - [ ] Initialize project configuration and files in the workspace
+  - [ ] Implement static API key authentication middleware
+  - [ ] Setup FastAPI router and basic health check endpoint
+- [ ] **Phase 3: Core Triage Engine Implementation**
+  - [ ] Implement Domain Parser & Subdomain Neutralizer
+  - [ ] Implement Lexical Ticker-Stuffing Heuristic
+  - [ ] Implement `POST /v1/triage` endpoint
+- [ ] **Phase 4: Mock Dataset & In-Memory Loading**
+  - [ ] Add seed list of known financial content farms
+  - [ ] Add startup loader for in-memory lookup
+- [ ] **Phase 5: Verification & Testing**
+  - [ ] Implement unit tests for domain/lexical matching rules
+  - [ ] Implement latency benchmark tests (<15ms target)
